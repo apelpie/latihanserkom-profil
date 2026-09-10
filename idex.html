@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio Nurul Citra Alfiah - Calon Web Developer">
+    <meta name="keywords" content="portofolio, web developer, citra, rpl">
+    <meta name="author" content="Nurul Citra Alfiah">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <title>Nurul Citra Alfiah | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdf8f2;
+            color: #5c4033;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #faf1e4 0%, #f5e8d8 100%);
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-avatar {
+            width: 390px;
+            height: 390px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid #fff;
+            box-shadow: 0 20px 60px rgba(92, 64, 51, 0.15);
+        }
+
+        .btn-primary-custom {
+            background: #d4b8a0;
+            color: #fff;
+            border: none;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline-custom {
+            background: transparent;
+            color: #7a5d4a;
+            border: 2px solid #d4b8a0;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #5c4033;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #d4b8a0;
+            border-radius: 10px;
+        }
+        .section-subtitle {
+            color: #8b6f5a;
+            font-size: 16px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .card-skill {
+            background: #fff8f0;
+            border-radius: 16px;
+            padding: 24px 16px;
+            text-align: center;
+            height: 100%;
+            border: 1px solid rgba(212, 184, 160, 0.2);
+        }
+
+        .card-skill img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            margin-bottom: 12px;
+        }
+
+        .card-skill i {
+            font-size: 40px;
+            color: #5c4033;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .card-project {
+            border-radius: 16px;
+            border: none;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .card-project img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-usaha {
+            background: #f8efe6;
+            border-radius: 16px;
+            border: 2px solid #d4b8a0;
+            padding: 30px;
+            height: 100%;
+        }
+
+        .card-usaha-icon {
+            background: #d4b8a0;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            height: 100%;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-usaha-icon i {
+            font-size: 80px;
+            color: #fff;
+        }
+        .info-card {
+            background: #fff8f0;
+            border-radius: 14px;
+            padding: 20px;
+            text-align: center;
+            height: 100%;
+            border: 1px solid rgba(212, 184, 160, 0.15);
+        }
+
+        .info-card i {
+            font-size: 28px;
+            color: #7a5d4a;
+            margin-bottom: 8px;
+        }
+        .footer {
+            background: #f5e8d8;
+            padding: 24px 0;
+            text-align: center;
+            color: #7a5d4a;
+            font-size: 14px;
+            border-top: 1px solid rgba(212, 184, 160, 0.3);
+        }
+
+        .footer-social a {
+            color: #7a5d4a;
+            margin: 0 12px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero-avatar {
+                width: 200px;
+                height: 200px;
+                margin-top: 30px;
+            }
+            .hero-section {
+                text-align: center;
+                padding: 40px 20px;
+            }
+            .hero-section .text-start {
+                text-align: center !important;
+            }
+            .hero-section .btn {
+                margin: 5px;
+            }
+            .section-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-avatar {
+                width: 160px;
+                height: 160px;
+            }
+            .hero-section h1 {
+                font-size: 28px !important;
+            }
+            .card-usaha-icon {
+                min-height: 120px;
+                padding: 20px;
+            }
+            .card-usaha-icon i {
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 text-start">
+                    <span class="section-subtitle">Halo, Selamat Datang</span>
+                    <h1 class="display-3 fw-bold mb-3" style="color: #5c4033;">
+                        Saya <br><span style="color: #bfa691;">Nurul Citra Alfiah</span>
+                    </h1>
+                    <p class="fs-5 mb-2" style="color: #7a5d4a; font-weight: 400;">
+                        Calon Web Developer yang terus belajar dan berkembang.
+                    </p>
+                    <p class="fs-6 mb-4" style="color: #8b6f5a; max-width: 500px; line-height: 1.7;">
+                        Saya adalah siswi jurusan Rekayasa Perangkat Lunak yang menyukai coding, 
+                        desain, dan pengembangan web. Setiap baris kode adalah langkah kecil 
+                        menuju masa depan yang lebih baik.
+                    </p>
+                    <a href="#projects" class="btn-primary-custom">
+                        <i class="bi bi-grid-fill me-2"></i>Lihat Project
+                    </a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="assets/img/quy.jpeg" alt="Foto Profil" class="hero-avatar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- TENTANG SAYA -->
+    <!-- ============================================================ -->
+    <section class="py-5" style="background-color: #fdf8f2;">
+        <div class="container py-4">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-5">
+                    <p class="section-subtitle">TENTANG SAYA</p>
+                    <h2 class="section-title mb-4">Kenalan Lebih Dekat Yuk!</h2>
+                    <p style="color: #6b5342; line-height: 1.8; font-size: 15px;">
+                        Saya adalah siswi SMK Negeri 1 Jenangan jurusan Rekayasa Perangkat Lunak. 
+                        Saat ini saya masih dalam tahap mempelajari dasar-dasar pemrograman dan 
+                        pengembangan web. Saya suka mencoba hal baru, terutama yang berhubungan 
+                        dengan teknologi, desain, dan kreativitas. Saya percaya setiap proses 
+                        belajar, sekecil apa pun, selalu membawa kemajuan.
+                    </p>
+                </div>
+                <div class="col-lg-7">
+                    <div class="row g-3">
+                        <div class="col-sm-4">
+                            <div class="info-card">
+                                <i class="bi bi-backpack2"></i>
+                                <p class="fw-bold mb-0" style="color: #5c4033; font-size: 14px;">Pendidikan</p>
+                                <p style="color: #7a5d4a; font-size: 13px; margin-bottom: 0;">SMKN 1 Jenangan</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="info-card">
+                                <i class="bi bi-laptop"></i>
+                                <p class="fw-bold mb-0" style="color: #5c4033; font-size: 14px;">Jurusan</p>
+                                <p style="color: #7a5d4a; font-size: 13px; margin-bottom: 0;">Rekayasa Perangkat Lunak</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="info-card">
+                                <i class="bi bi-person"></i>
+                                <p class="fw-bold mb-0" style="color: #5c4033; font-size: 14px;">Kelas</p>
+                                <p style="color: #7a5d4a; font-size: 13px; margin-bottom: 0;">XII RPL C</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="info-card">
+                                <i class="bi bi-geo-alt"></i>
+                                <p class="fw-bold mb-0" style="color: #5c4033; font-size: 14px;">Domisili</p>
+                                <p style="color: #7a5d4a; font-size: 13px; margin-bottom: 0;">Kauman, Ponorogo</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="info-card">
+                                <i class="bi bi-envelope"></i>
+                                <p class="fw-bold mb-0" style="color: #5c4033; font-size: 14px;">Email</p>
+                                <p style="color: #7a5d4a; font-size: 12px; margin-bottom: 0;">nurul.citra@smk.belajar.id</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="info-card">
+                                <i class="bi bi-whatsapp"></i>
+                                <p class="fw-bold mb-0" style="color: #5c4033; font-size: 14px;">WhatsApp</p>
+                                <p style="color: #7a5d4a; font-size: 12px; margin-bottom: 0;">+62 831-3264-5197</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-5" style="background-color: #faf1e4;">
+        <div class="container py-4">
+            <div class="text-center">
+                <p class="section-subtitle">KEMAMPUAN</p>
+                <h2 class="section-title mb-5">Skill yang Saya Pelajari</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-2 col-6">
+                    <div class="card-skill">
+                        <img src="assets/img/html.png" alt="HTML">
+                        <p class="fw-bold mb-1" style="color: #5c4033; font-size: 14px;">HTML</p>
+                        <p style="color: #7a5d4a; font-size: 12px; margin-bottom: 0;">Struktur & konten web</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="card-skill">
+                        <img src="assets/img/css.png" alt="CSS">
+                        <p class="fw-bold mb-1" style="color: #5c4033; font-size: 14px;">CSS</p>
+                        <p style="color: #7a5d4a; font-size: 12px; margin-bottom: 0;">Tampilan & layout</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="card-skill">
+                        <img src="assets/img/js.png" alt="JavaScript">
+                        <p class="fw-bold mb-1" style="color: #5c4033; font-size: 14px;">JavaScript</p>
+                        <p style="color: #7a5d4a; font-size: 12px; margin-bottom: 0;">Interaksi & dinamika</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="card-skill">
+                        <i class="bi bi-database-fill"></i>
+                        <p class="fw-bold mb-1" style="color: #5c4033; font-size: 14px;">Database</p>
+                        <p style="color: #7a5d4a; font-size: 12px; margin-bottom: 0;">Kelola & simpan data</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="card-skill">
+                        <i class="bi bi-lightbulb-fill"></i>
+                        <p class="fw-bold mb-1" style="color: #5c4033; font-size: 14px;">Problem Solving</p>
+                        <p style="color: #7a5d4a; font-size: 12px; margin-bottom: 0;">Mencari solusi error</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="card-skill">
+                        <i class="bi bi-arrow-clockwise"></i>
+                        <p class="fw-bold mb-1" style="color: #5c4033; font-size: 14px;">Adaptability</p>
+                        <p style="color: #7a5d4a; font-size: 12px; margin-bottom: 0;">Belajar hal baru</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="py-5" style="background-color: #fdf8f2;">
+        <div class="container py-4">
+            <div class="text-center">
+                <p class="section-subtitle">PORTOFOLIO</p>
+                <h2 class="section-title mb-5">Project yang Pernah Dikerjakan</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card-project">
+                        <img src="assets/img/News.jpeg" alt="Portal Berita">
+                        <div class="p-3">
+                            <h6 class="fw-bold" style="color: #5c4033;">Website Portal Berita</h6>
+                            <p style="color: #6b5342; font-size: 13px; line-height: 1.6;">Portal berita sederhana untuk menampilkan dan mengelola informasi.</p>
+                            <span class="badge" style="background: #faf1e4; color: #5c4033; font-weight: 400;">localhost</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card-project">
+                        <img src="assets/img/Mading.png" alt="Mading Digital">
+                        <div class="p-3">
+                            <h6 class="fw-bold" style="color: #5c4033;">Website Mading Digital</h6>
+                            <p style="color: #6b5342; font-size: 13px; line-height: 1.6;">Mading digital digunakan untuk menampilkan informasi dan karya siswa.</p>
+                            <span class="badge" style="background: #faf1e4; color: #5c4033; font-weight: 400;">localhost</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card-project">
+                        <img src="assets/img/siskel.jpeg" alt="Sistem Keluhan">
+                        <div class="p-3">
+                            <h6 class="fw-bold" style="color: #5c4033;">Website Sistem Keluhan</h6>
+                            <p style="color: #6b5342; font-size: 13px; line-height: 1.6;">Sistem untuk menyampaikan dan mengelola keluhan secara terstruktur.</p>
+                            <span class="badge" style="background: #faf1e4; color: #5c4033; font-weight: 400;">localhost</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card-project">
+                        <img src="assets/img/TokoOnlen.png" alt="Toko Dapoer Bujul">
+                        <div class="p-3">
+                            <h6 class="fw-bold" style="color: #5c4033;">Website Toko Dapoer Bujul</h6>
+                            <p style="color: #6b5342; font-size: 13px; line-height: 1.6;">Toko online untuk menampilkan produk dan informasi usaha, kategori, serta produk.</p>
+                            <a href="https://dapoerbujul.my.id" target="_blank" class="btn btn-sm px-3 py-1 rounded-pill" style="background: #d4b8a0; color: #fff; font-size: 12px; text-decoration: none;">
+                                Lihat Project →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="usaha" class="py-5" style="background-color: #faf1e4;">
+        <div class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="text-center">
+                        <p class="section-subtitle">WEBSITE USAHA</p>
+                        <h2 class="section-title mb-4">Kunjungi Toko Rajut Noco</h2>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card-usaha-icon">
+                                <i class="bi bi-shop"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-usaha">
+                                <h5 class="fw-bold mb-2" style="color: #5c4033;"> Noco - Toko Rajut Handmade</h5>
+                                <p style="color: #7a5d4a; font-size: 14px; line-height: 1.7;">
+                                    Menjual berbagai produk rajut berkualitas seperti baju rajut, sweater, 
+                                    tas, mainan rajut, dan aksesori lainnya. Semua produk dibuat dengan 
+                                    cinta dan ketelitian tinggi.
+                                </p>
+                                <a href="https://test.dapoerbujul.my.id" target="_blank" class="btn-primary-custom" style="padding: 10px 28px; font-size: 14px;">
+                                    <i class="bi bi-box-arrow-up-right me-2"></i>Kunjungi Toko
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================================ -->
+    <footer class="footer">
+        <div class="container">
+            <p class="mb-0 mt-2" style="color: #7a5d4a; font-size: 13px;">
+                © 2026 Nurul Citra Alfiah. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+    <script src="assets/js/bootstrap.js"></script>
+
+</body>
+</html>
